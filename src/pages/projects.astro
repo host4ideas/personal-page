@@ -1,8 +1,9 @@
 ---
-    // Layout Imports
-    import MySiteLayout from '../layouts/pageLayout.astro';
-    // Component Imports
-    import Counter from "../components/Counter.vue";
+// Layout Imports
+import MySiteLayout from '../layouts/pageLayout.astro';
+// Component Imports
+import Counter from "../components/Counter.vue";
+import ProjectsView from '../components/ProjectsView.vue';
 ---
 
 <h1>Projects page</h1>
@@ -12,4 +13,5 @@
     <Counter client:visible>
         <h1>Hello, Vue!</h1>
     </Counter>
+    <ProjectsView />
 </MySiteLayout>
