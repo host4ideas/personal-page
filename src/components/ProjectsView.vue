@@ -1,5 +1,6 @@
 <script>
 import ProjectCard from "./ProjectCard.vue";
+import mockDBProjects from "../../mockDB/projects.json.json";
 
 let id = 1;
 
@@ -9,7 +10,7 @@ export default {
   },
   data() {
     return {
-      projects: [],
+      projects: mockDBProjects,
     };
   },
   methods: {
