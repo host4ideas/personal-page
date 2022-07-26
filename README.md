@@ -19,3 +19,22 @@ npm init astro -- --template framework-vue
 
 This example showcases Astro working with [Vue](https://v3.vuejs.org/).
 
+```text
+HEX: #d5f4e6
+RGBA: rgba(213, 244, 230, 1)
+
+HEX: #80ced6
+RGBA: rgba(128, 206, 214, 1)
+
+HEX: #fefbd8
+RGBA: rgba(254, 251, 216, 1)
+
+HEX: #618685
+RGBA: rgba(97, 134, 133, 1)
+```
+
+## Icons:
+<a target="_blank" href="https://icons8.com/icon/124328/death-star">Death Star</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/2GeVerrtsdj0/boba">Boba</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a href="https://www.flaticon.com/free-icons/star-wars" title="star wars icons">Star wars icons created by Freepik - Flaticon</a>
+<a target="_blank" href="https://icons8.com/icon/4OkVVhM1gDQn/baby-yoda">Baby Yoda</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

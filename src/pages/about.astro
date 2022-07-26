@@ -1,15 +1,9 @@
 ---
-    // Layout Imports
-    import MySiteLayout from '../layouts/pageLayout.astro';
-    // Component Imports
-    import Counter from "../components/Counter.vue";
+// Layout Imports
+import MySiteLayout from '../layouts/pageLayout.astro';
+// Component Imports
 ---
 
-<h1>About page</h1>
-
-<MySiteLayout>
+<MySiteLayout pageTitle="More about me">
     <!-- Import here ProjectView passing a JSON with all the projects -->
-    <Counter client:visible>
-        <h1>Hello, Vue!</h1>
-    </Counter>
 </MySiteLayout>

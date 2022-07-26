@@ -1,31 +1,143 @@
+---
+const { pageTitle } = Astro.props;
+---
+
 <!-- This will be the layout for all the pages -->
 
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Host4ideas's portfolio</title>
+    <title>{"Host4ideas's " + pageTitle || "Host4ideas's portfolio"}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preload" href="https://fonts.googleapis.com">
+    <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
         html,
         body {
-            font-family: system-ui;
+            font-family: Arial, sans-serif;
             margin: 0;
         }
 
         body {
             padding: 2rem;
         }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-bottom: 100px;
+        }
+
+        #homeLink {
+            background-image: url("assets/icons/icons8-death-star-100.png");
+        }
+
+        #aboutLink {
+            background-image: url("assets/icons/icons8-baby-yoda.svg");
+        }
+
+        #projectsLink {
+            background-image: url("assets/icons/light-saber.png");
+            background-size: 75%;
+        }
+
+        #contactLink {
+            background-image: url("assets/icons/icons8-boba-96.png");
+        }
+
+        .title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 3rem;
+        }
+
+        .text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .nav-links {
+            height: 2rem;
+            width: 2rem;
+            margin: 5px;
+            padding: 5px;
+            border: 1px rgba(97, 134, 133, 0.5) solid;
+            border-radius: 5px;
+            background-color: #fefbd8;
+            background-size: 90%;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 500ms;
+            box-shadow: rgba(97, 134, 133, 0.4) 2px 2px;
+            animation: box-shadow-animation-out 500ms;
+
+        }
+
+        .nav-links:hover {
+            transform: scale(1.1);
+            animation: box-shadow-animation-in 500ms forwards;
+        }
+
+        @keyframes box-shadow-animation-in {
+            from {
+                box-shadow: rgba(97, 134, 133, 0.4) 2px 2px;
+            }
+
+            15% {
+                box-shadow: rgba(97, 134, 133, 0.4) 2px 2px, rgba(97, 134, 133, 0.3) 4px 4px;
+            }
+
+            20% {
+                box-shadow: rgba(97, 134, 133, 0.4) 2px 2px, rgba(97, 134, 133, 0.3) 4px 4px, rgba(97, 134, 133, 0.2) 8px 8px;
+            }
+
+            45% {
+                box-shadow: rgba(97, 134, 133, 0.4) 2px 2px, rgba(97, 134, 133, 0.3) 4px 4px, rgba(97, 134, 133, 0.2) 8px 8px, rgba(97, 134, 133, 0.1) 10px 10px;
+            }
+
+            to {
+                box-shadow: rgba(97, 134, 133, 0.4) 2px 2px, rgba(97, 134, 133, 0.3) 4px 4px, rgba(97, 134, 133, 0.2) 8px 8px, rgba(97, 134, 133, 0.1) 10px 10px, rgba(97, 134, 133, 0.05) 12px 12px;
+            }
+        }
+
+        @keyframes box-shadow-animation-out {
+            to {
+                box-shadow: rgba(97, 134, 133, 0.4) 2px 2px;
+            }
+
+            45% {
+                box-shadow: rgba(97, 134, 133, 0.4) 2px 2px, rgba(97, 134, 133, 0.3) 4px 4px;
+            }
+
+            20% {
+                box-shadow: rgba(97, 134, 133, 0.4) 2px 2px, rgba(97, 134, 133, 0.3) 4px 4px, rgba(97, 134, 133, 0.2) 8px 8px;
+            }
+
+            15% {
+                box-shadow: rgba(97, 134, 133, 0.4) 2px 2px, rgba(97, 134, 133, 0.3) 4px 4px, rgba(97, 134, 133, 0.2) 8px 8px, rgba(97, 134, 133, 0.1) 10px 10px;
+            }
+
+            from {
+                box-shadow: rgba(97, 134, 133, 0.4) 2px 2px, rgba(97, 134, 133, 0.3) 4px 4px, rgba(97, 134, 133, 0.2) 8px 8px, rgba(97, 134, 133, 0.1) 10px 10px, rgba(97, 134, 133, 0.05) 12px 12px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <header>
+        <h1 class="title">{pageTitle}</h1>
+    </header>
     <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
+        <a id="homeLink" class="nav-links" href="/" title="Home page 🏠"></a>
+        <a id="aboutLink" class="nav-links" href="/about" title="More about me 🤓"></a>
+        <a id="projectsLink" class="nav-links" href="/projects" title="See my projects 🐱‍🏍"></a>
+        <a id="contactLink" class="nav-links" href="/contact" title="Contact me 💌"></a>
     </nav>
     <main>
         <slot /> <!-- your content is injected here -->

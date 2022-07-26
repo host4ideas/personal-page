@@ -7,15 +7,15 @@ export default {
   },
   data() {
     return {
-      shortedDesc: "",
+      imgRef: null,
     };
   },
   mounted() {
-    this.shortedDesc = this.desc;
+    this.imgRef = this.$refs.imgRef;
   },
   computed: {
     shortedDesc() {
-      return this.shortedDesc.slice(0, 250);
+      return this.desc.slice(0, 250);
     },
   },
 };
@@ -23,21 +23,34 @@ export default {
 
 <template>
   <div class="project-card">
-    <h3 class="project-card-title">{{ title || "No title provided" }}</h3>
-    <div>
+    <h3 class="title">{{ title || "No title provided" }}</h3>
+    <div class="card-content">
       <p class="project-card-desc">
         {{ shortedDesc || "No description provided" }}
       </p>
-      <img class="project-card-img" alt="Project image" src="{{imgSrc}}" />
+      <img
+        ref="imgRef"
+        class="project-card-img"
+        alt="Project image"
+        :src="imgSrc || 'assets/icons/eye-slash-solid.svg'"
+      />
     </div>
   </div>
 </template>
 
 <style>
+.project-card-img {
+  max-height: 250px;
+  max-width: 350px;
+}
 .project-card {
-  min-width: 200px;
-  min-height: 250px;
-  border: 1px solid black;
-  overflow: hidden;
+  margin: 20px;
+  padding: 20px;
+  max-height: 300px;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #d5f4e6;
+  overflow-y: auto;
 }
 </style>
