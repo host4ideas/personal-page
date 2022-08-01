@@ -1,13 +1,16 @@
 ---
-    // Layout Imports
-    import MySiteLayout from '../layouts/pageLayout.astro';
-    // Component Imports
-    import Counter from "../components/Counter.vue";
+// Layout Imports
+import MySiteLayout from '../layouts/pageLayout.astro';
+// Component Imports
+import MessageForm from "../components/MessageForm.vue";
 ---
 
 <MySiteLayout pageTitle="Contact me!!!">
     <!-- Import here ProjectView passing a JSON with all the projects -->
-    <Counter client:visible>
-        <h1>Hello, Vue!</h1>
-    </Counter>
+    <div class="text-container centered-text">
+        <p>If you want to know more about me don't hesitate to send me a direct message.</p>
+        <p>By filling this form you will sending me an email thanks to <a target="_blank" class="link"
+                href="https://nodemailer.com">nodemailer</a>.</p>
+    </div>
+    <MessageForm />
 </MySiteLayout>

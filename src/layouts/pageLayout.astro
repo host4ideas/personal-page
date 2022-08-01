@@ -1,5 +1,6 @@
 ---
 const { pageTitle } = Astro.props;
+// import ErrorComponent from "../components/ErrorComponent.vue";
 ---
 
 <!-- This will be the layout for all the pages -->
@@ -13,15 +14,54 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preload" href="https://fonts.googleapis.com">
     <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+    <style is:global>
+        /*Apply globally*/
+
+        .title {
+            font-family: 'Montserrat', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            font-weight: 800;
+            font-size: 3rem;
+        }
+
+        .text-container {
+            margin-bottom: 50px;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+
+        .centered-text {
+            text-align: center;
+        }
+
+        .separator {
+            border-top: 1px solid rgba(97, 134, 133, 0.5);
+        }
+
+        .link {
+            text-decoration: none;
+            font-weight: 600;
+            color: #618685;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+
     <style>
+        /* Apply locally */
+
         html,
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
         }
 
         body {
+            font-family: 'Source Sans Pro', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 300;
             padding: 2rem;
         }
 
@@ -30,7 +70,7 @@ const { pageTitle } = Astro.props;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-evenly;
-            margin-bottom: 100px;
+            margin-bottom: 75px;
         }
 
         #homeLink {
@@ -50,15 +90,9 @@ const { pageTitle } = Astro.props;
             background-image: url("assets/icons/icons8-boba-96.png");
         }
 
-        .title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 3rem;
-        }
-
-        .text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
+        .nav-container {
+            margin-bottom: 45px;
+            margin-top: 65px;
         }
 
         .nav-links {
@@ -133,15 +167,51 @@ const { pageTitle } = Astro.props;
     <header>
         <h1 class="title">{pageTitle}</h1>
     </header>
-    <nav>
-        <a id="homeLink" class="nav-links" href="/" title="Home page 🏠"></a>
-        <a id="aboutLink" class="nav-links" href="/about" title="More about me 🤓"></a>
-        <a id="projectsLink" class="nav-links" href="/projects" title="See my projects 🐱‍🏍"></a>
-        <a id="contactLink" class="nav-links" href="/contact" title="Contact me 💌"></a>
-    </nav>
+    <div class="nav-container">
+        <nav>
+            <a id="homeLink" class="nav-links" href="/" title="Home page 🏠"></a>
+            <a id="aboutLink" class="nav-links" href="/about" title="More about me 🤓"></a>
+            <a id="projectsLink" class="nav-links" href="/projects" title="See my projects 🐱‍🏍"></a>
+            <a id="contactLink" class="nav-links" href="/contact" title="Contact me 💌"></a>
+        </nav>
+        <div class="separator" />
+    </div>
     <main>
+        <!-- <ErrorComponent /> -->
         <slot /> <!-- your content is injected here -->
     </main>
 </body>
+
+<script type="text/javascript">
+    function loadFont(name, url) {
+        return new Promise((res, rej) => {
+            setTimeout(() => {
+                rej(`Font ${name} loading timeout exceeded`);
+            }, 2000);
+
+            const f = new FontFace(name, url);
+            f.load().then((loadedFont) => {
+                document.fonts.add(loadedFont);
+                res(`Font ${name} loaded`);
+            }).catch(error => {
+                rej(error.message);
+            })
+        })
+    }
+
+    try {
+        // Check if the custom Google fonts are available after 1000ms the window has loaded
+        setTimeout(() => {
+            if (!document.fonts.check("10px Montserrat")) {
+                loadFont("Montserrat", "url(/assets/fonts/Montserrat-VariableFont_wght.ttf)");
+            }
+            if (!document.fonts.check("10px Source Sans Pro")) {
+                loadFont("Source Sans Pro", "url(/assets/fonts/SourceSansPro-Regular.ttf)");
+            }
+        }, 1000)
+    } catch (e) {
+        console.log(e.message);
+    }
+</script>
 
 </html>
