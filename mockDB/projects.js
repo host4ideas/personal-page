@@ -1,26 +1,31 @@
 export default [
-  {
-    id: 1,
-    title: "BassNet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor ullamcorper urna, aliquam rhoncus est laoreet vitae. Nullam finibus sed metus venenatis rhoncus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris faucibus, nisl sit amet hendrerit consequat, elit lorem vestibulum augue, eleifend dictum nulla metus ac nibh. Ut pretium elit leo, id efficitur diam pretium in. Integer vestibulum ullamcorper justo id porta. Proin rhoncus massa nec lacus blandit, a pharetra tortor dapibus. Phasellus vitae suscipit diam. Nullam a viverra risus. Nam eu velit mauris.\nCurabitur blandit nec nisi sit amet elementum. Aenean vitae nisl ac justo interdum volutpat sit amet in massa. Suspendisse lobortis maximus quam id pharetra. Sed id urna tincidunt leo mattis egestas. Quisque quis consectetur odio. Etiam rhoncus tellus sit amet libero ultrices elementum. Vivamus at gravida diam. Duis consequat ligula a nisi consequat, a pharetra turpis faucibus.\nCras interdum luctus porta. Vestibulum vitae tempus tellus. Duis sodales, velit id rhoncus mattis, libero ex pretium magna, eget ornare risus orci id nisl. Aenean auctor arcu non nisi sodales consequat. Vivamus non massa non ante laoreet tincidunt sit amet sed diam. Duis eget ornare magna. Vestibulum sit amet facilisis nulla. Duis est sapien, dignissim et mollis eu, aliquam vel leo. Suspendisse non bibendum mauris. Aenean tempor risus feugiat nulla vulputate molestie. Etiam mattis venenatis diam vel dignissim. Sed eget sapien eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    imgSrc: null,
-  },
-  {
-    id: 2,
-    title: "BassNet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor ullamcorper urna, aliquam rhoncus est laoreet vitae. Nullam finibus sed metus venenatis rhoncus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris faucibus, nisl sit amet hendrerit consequat, elit lorem vestibulum augue, eleifend dictum nulla metus ac nibh. Ut pretium elit leo, id efficitur diam pretium in. Integer vestibulum ullamcorper justo id porta. Proin rhoncus massa nec lacus blandit, a pharetra tortor dapibus. Phasellus vitae suscipit diam. Nullam a viverra risus. Nam eu velit mauris.\nCurabitur blandit nec nisi sit amet elementum. Aenean vitae nisl ac justo interdum volutpat sit amet in massa. Suspendisse lobortis maximus quam id pharetra. Sed id urna tincidunt leo mattis egestas. Quisque quis consectetur odio. Etiam rhoncus tellus sit amet libero ultrices elementum. Vivamus at gravida diam. Duis consequat ligula a nisi consequat, a pharetra turpis faucibus.\nCras interdum luctus porta. Vestibulum vitae tempus tellus. Duis sodales, velit id rhoncus mattis, libero ex pretium magna, eget ornare risus orci id nisl. Aenean auctor arcu non nisi sodales consequat. Vivamus non massa non ante laoreet tincidunt sit amet sed diam. Duis eget ornare magna. Vestibulum sit amet facilisis nulla. Duis est sapien, dignissim et mollis eu, aliquam vel leo. Suspendisse non bibendum mauris. Aenean tempor risus feugiat nulla vulputate molestie. Etiam mattis venenatis diam vel dignissim. Sed eget sapien eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    imgSrc: null,
-  },
-  {
-    id: 3,
-    title: "BassNet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor ullamcorper urna, aliquam rhoncus est laoreet vitae. Nullam finibus sed metus venenatis rhoncus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris faucibus, nisl sit amet hendrerit consequat, elit lorem vestibulum augue, eleifend dictum nulla metus ac nibh. Ut pretium elit leo, id efficitur diam pretium in. Integer vestibulum ullamcorper justo id porta. Proin rhoncus massa nec lacus blandit, a pharetra tortor dapibus. Phasellus vitae suscipit diam. Nullam a viverra risus. Nam eu velit mauris.\nCurabitur blandit nec nisi sit amet elementum. Aenean vitae nisl ac justo interdum volutpat sit amet in massa. Suspendisse lobortis maximus quam id pharetra. Sed id urna tincidunt leo mattis egestas. Quisque quis consectetur odio. Etiam rhoncus tellus sit amet libero ultrices elementum. Vivamus at gravida diam. Duis consequat ligula a nisi consequat, a pharetra turpis faucibus.\nCras interdum luctus porta. Vestibulum vitae tempus tellus. Duis sodales, velit id rhoncus mattis, libero ex pretium magna, eget ornare risus orci id nisl. Aenean auctor arcu non nisi sodales consequat. Vivamus non massa non ante laoreet tincidunt sit amet sed diam. Duis eget ornare magna. Vestibulum sit amet facilisis nulla. Duis est sapien, dignissim et mollis eu, aliquam vel leo. Suspendisse non bibendum mauris. Aenean tempor risus feugiat nulla vulputate molestie. Etiam mattis venenatis diam vel dignissim. Sed eget sapien eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    imgSrc: null,
-  },
-  {
-    id: 4,
-    title: "BassNet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor ullamcorper urna, aliquam rhoncus est laoreet vitae. Nullam finibus sed metus venenatis rhoncus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris faucibus, nisl sit amet hendrerit consequat, elit lorem vestibulum augue, eleifend dictum nulla metus ac nibh. Ut pretium elit leo, id efficitur diam pretium in. Integer vestibulum ullamcorper justo id porta. Proin rhoncus massa nec lacus blandit, a pharetra tortor dapibus. Phasellus vitae suscipit diam. Nullam a viverra risus. Nam eu velit mauris.\nCurabitur blandit nec nisi sit amet elementum. Aenean vitae nisl ac justo interdum volutpat sit amet in massa. Suspendisse lobortis maximus quam id pharetra. Sed id urna tincidunt leo mattis egestas. Quisque quis consectetur odio. Etiam rhoncus tellus sit amet libero ultrices elementum. Vivamus at gravida diam. Duis consequat ligula a nisi consequat, a pharetra turpis faucibus.\nCras interdum luctus porta. Vestibulum vitae tempus tellus. Duis sodales, velit id rhoncus mattis, libero ex pretium magna, eget ornare risus orci id nisl. Aenean auctor arcu non nisi sodales consequat. Vivamus non massa non ante laoreet tincidunt sit amet sed diam. Duis eget ornare magna. Vestibulum sit amet facilisis nulla. Duis est sapien, dignissim et mollis eu, aliquam vel leo. Suspendisse non bibendum mauris. Aenean tempor risus feugiat nulla vulputate molestie. Etiam mattis venenatis diam vel dignissim. Sed eget sapien eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-    imgSrc: null,
-  },
+    {
+        title: "Zombie Slayer Game",
+        desc: "A 2D zombie game. This project has been made using Phaser as the library for the entire game and React for the website itself, all based in the following template: <a class='link' href='https://github.com/kevinshen56714/create-react-phaser3-app'>Link to template</a>",
+        imgSrc: null,
+        projectPreviewSrc:
+            "https://host4ideas.github.io/zombie-slayer-phaser-game/",
+        projectSrc: "https://host4ideas.github.io/zombie-slayer-phaser-game/",
+    },
+    {
+        title: "BassNet",
+        desc: "This is my final assignment of my studies. BassNet is a platform where you can upload your music and listen to it online.",
+        imgSrc: null,
+        projectPreviewSrc: "",
+        projectSrc: "",
+    },
+    {
+        title: "3D House Model",
+        desc: "Personal project created with the <a class='link' href='https://threejs.org'>Three JS library</a>, which enable web developers to create amazing 3D animations and graphics with JavaScript.\nThe 3D model is in fact a real house project for my family, any suggestions are welcome 🤗",
+        imgSrc: null,
+        projectPreviewSrc: "https://host4ideas.github.io/threejs-house-model/",
+        projectSrc: "https://github.com/host4ideas/threejs-house-model",
+    },
+    {
+        title: "My personal page",
+        desc: "Personal project created with the <a class='link' href='https://threejs.org'>Three JS library</a>, which enable web developers to create amazing 3D animations and graphics with JavaScript.\nThe 3D model is in fact a real house project for my family, any suggestions are welcome 🤗",
+        imgSrc: null,
+        projectPreviewSrc: "https://github.com/host4ideas/personal-page",
+        projectSrc: "https://github.com/host4ideas/personal-page",
+    },
 ];
