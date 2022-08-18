@@ -1,8 +1,15 @@
 ---
-// Layout Imports
-import MySiteLayout from '../layouts/pageLayout.astro';
+import MySiteLayout from "../layouts/pageLayout.astro";
+import mockDBProjects from "../../mockDB/projects.js";
+import Carousel from "../components/Carousel.vue";
+
+async function getProjects() {
+	return mockDBProjects;
+}
+
+const projects = await getProjects();
 ---
 
 <MySiteLayout pageTitle="HOME">
-	<!-- Import here ProjectView passing a JSON with all the projects -->
+	<Carousel projects={projects} client:load />
 </MySiteLayout>

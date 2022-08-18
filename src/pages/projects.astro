@@ -5,7 +5,6 @@ import MySiteLayout from '../layouts/pageLayout.astro';
 import ProjectsView from '../components/ProjectsView.vue';
 ---
 
-<MySiteLayout pageTitle="Projects page">
-    <!-- Import here ProjectView passing a JSON with all the projects -->
+<MySiteLayout pageTitle="Projects">
     <ProjectsView client:load />
 </MySiteLayout>

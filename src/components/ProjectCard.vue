@@ -1,56 +1,79 @@
 <script>
 export default {
-  props: {
-    title: String,
-    desc: String,
-    imgSrc: String,
-  },
-  data() {
-    return {
-      imgRef: null,
-    };
-  },
-  mounted() {
-    this.imgRef = this.$refs.imgRef;
-  },
-  computed: {
-    shortedDesc() {
-      return this.desc.slice(0, 250);
+    props: {
+        id: Number,
+        title: String,
+        desc: String,
+        imgSrc: String,
     },
-  },
+    data() {
+        return {
+            imgRef: null,
+            projectDesc: null,
+        };
+    },
+    mounted() {
+        this.imgRef = this.$refs.imgRef;
+        this.projectDesc = this.$refs.projectDesc;
+        this.projectDesc.innerHTML = this.desc.slice(0, 250);
+    },
+    methods: {
+        handleScroll(e) {
+            e.preventDefault();
+            this.$refs.scroll.scrollTop += e.deltaY;
+        },
+    },
+    computed: {
+        shortedDesc() {
+            return this.desc.slice(0, 250);
+        },
+    },
 };
 </script>
 
 <template>
-  <div class="project-card">
-    <h3 class="title">{{ title || "No title provided" }}</h3>
-    <div class="card-content">
-      <p class="project-card-desc">
-        {{ shortedDesc || "No description provided" }}
-      </p>
-      <img
-        ref="imgRef"
-        class="project-card-img"
-        alt="Project image"
-        :src="imgSrc || 'assets/icons/eye-slash-solid.svg'"
-      />
-    </div>
-  </div>
+    <a
+        class="project-card custom-scrollbar"
+        ref="scroll"
+        :href="'/projects/' + id"
+        @mousewheel="handleScroll"
+    >
+        <h3 class="sub-title">{{ title || "No title provided" }}</h3>
+        <p ref="projectDesc" class="project-card-desc" />
+        <img
+            ref="imgRef"
+            class="project-card-img"
+            alt="Project image"
+            :src="imgSrc || 'assets/icons/eye-slash-solid.svg'"
+        />
+    </a>
 </template>
 
 <style>
-.project-card-img {
-  max-height: 250px;
-  max-width: 350px;
-}
 .project-card {
-  margin: 20px;
-  padding: 20px;
-  max-height: 300px;
-  max-width: 400px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #d5f4e6;
-  overflow-y: auto;
+    display: block;
+    height: 325px;
+    width: 275px;
+    /* Arriba | Derecha | Abajo | Izquierda */
+    margin: 1.2rem 5px;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    color: black;
+    background-color: rgba(213, 244, 230, 1);
+    transition: transform 500ms;
+}
+.project-card:hover {
+    transform: scale(1.1);
+}
+.project-card-img {
+    max-height: 150px;
+    max-width: 250px;
+}
+.project-card-desc {
+    margin-bottom: 50px;
 }
 </style>

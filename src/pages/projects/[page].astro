@@ -1,0 +1,140 @@
+---
+import MySiteLayout from "../../layouts/pageLayout.astro";
+import mockDBProjects from "../../../mockDB/projects.js";
+
+export async function getStaticPaths({ paginate }) {
+	// Generate pages from our array of astronauts, with 2 to a page
+	return paginate(mockDBProjects, { pageSize: 1 });
+}
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props;
+const project = page.data[0];
+---
+
+<script type="text/javascript">
+	function resizeIframe(iframe) {
+		postMessage(message, targetOrigin);
+		iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+	}
+</script>
+
+<style>
+	/* Project info */
+	.project-preview {
+		width: 100%;
+		height: 80vh;
+		border: none;
+	}
+
+	.project-image {
+		width: 250px;
+	}
+
+	.next-prev-buttons {
+		display: flex;
+		justify-content: center;
+		margin-top: 50px;
+	}
+
+	.next-prev-buttons a:hover {
+		cursor: pointer;
+	}
+
+	/* Buttons prev, next styles */
+	/* From uiverse.io by @alexmaracinaru modified by me */
+	.cta {
+		position: relative;
+		margin: 10px;
+		padding: 12px 18px;
+		transition: all 0.2s ease;
+		border: none;
+		background: none;
+	}
+
+	.cta:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		border-radius: 50px;
+		background: #b1dae7;
+		width: 45px;
+		height: 45px;
+		transition: all 0.3s ease;
+	}
+
+	.cta span {
+		position: relative;
+		font-family: "Ubuntu", sans-serif;
+		font-size: 18px;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		color: #234567;
+	}
+
+	.cta svg {
+		position: relative;
+		top: 0;
+		margin-left: 10px;
+		fill: none;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke: #234567;
+		stroke-width: 2;
+		transform: translateX(-5px);
+		transition: all 0.3s ease;
+	}
+
+	.cta:hover {
+		cursor: pointer;
+	}
+
+	.cta:hover:before {
+		width: 100%;
+		background: #b1dae7;
+	}
+
+	.cta:hover svg {
+		transform: translateX(0);
+	}
+
+	.cta:active {
+		transform: scale(0.95);
+	}
+</style>
+
+<!--Display the current page number. Astro.params.page can also be used!-->
+<MySiteLayout pageTitle="Projects page">
+	<div class="text-container">
+		<p class="sub-title" set:html={project.title} />
+		<p set:html={project.desc} />
+		<img class="project-image" src={project.imgSrc} alt="Project image" />
+	</div>
+
+	<div class="separator" />
+	<p class="centered-text"><b>Project preview</b></p>
+	<iframe id="idIframe" class="project-preview" src={project.projectPreviewSrc}
+		sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin">
+		<p>This project cannot be shown in a iframe or your browser doesn't support iframes.</p>
+	</iframe>
+
+	<div class="next-prev-buttons">
+		<a href={page.url.prev}><button class="cta">
+				<span>Previous</span>
+				<svg viewBox="0 0 13 10" height="10px" width="15px">
+					<path d="M1,5 L11,5"></path>
+					<polyline points="8 1 12 5 8 9"></polyline>
+				</svg>
+			</button></a>
+		<a href={page.url.next}>
+			<button class="cta">
+				<span>Next</span>
+				<svg viewBox="0 0 13 10" height="10px" width="15px">
+					<path d="M1,5 L11,5"></path>
+					<polyline points="8 1 12 5 8 9"></polyline>
+				</svg>
+			</button>
+		</a>
+	</div>
+</MySiteLayout>
