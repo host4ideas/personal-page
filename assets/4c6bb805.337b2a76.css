@@ -1,0 +1,1 @@
+.project-card{display:block;height:325px;width:275px;margin:1.2rem 5px;padding:20px;overflow-y:auto;overflow-x:hidden;text-align:center;text-decoration:none;border-radius:5px;color:#000;background-color:#d5f4e6;transition:transform .5s}.project-card:hover{transform:scale(1.1)}.project-card-img{max-height:150px;max-width:250px}.project-card-desc{margin-bottom:50px}
