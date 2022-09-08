@@ -79,6 +79,16 @@ const { pageTitle } = Astro.props;
 
             */
 
+            /* Theme change animation */
+            .smooth-theme,
+            .nav-links div,
+            .nav-links a,
+            .custom-scrollbar,
+            .separator,
+            .text-container {
+                transition: background-color 350ms, color 350ms;
+            }
+
             /**** Scrollbar *****/
             /* width */
             .custom-scrollbar::-webkit-scrollbar {
@@ -291,7 +301,6 @@ const { pageTitle } = Astro.props;
             /* Header */
             .page-header {
                 display: flex;
-                justify-content: center;
                 align-items: center;
             }
 
@@ -364,9 +373,9 @@ const { pageTitle } = Astro.props;
         </style>
     </head>
 
-    <body class="custom-scrollbar">
+    <body class="custom-scrollbar smooth-theme">
         <header class="page-header">
-            <h1 class="title a">{pageTitle}</h1>
+            <h1 class="title a smooth-theme">{pageTitle}</h1>
             <ThemeButton class="b" />
         </header>
         <div class="nav-container">
