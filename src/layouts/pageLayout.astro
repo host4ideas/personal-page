@@ -442,7 +442,7 @@ const { pageTitle } = Astro.props;
                 //local storage is used to override OS theme settings
                 if (window.localStorage.getItem("theme")) {
                     if (window.localStorage.getItem("theme") == "dark") {
-                        var theme = "dark";
+                        theme = "dark";
                     }
                 } else if (!window.matchMedia) {
                     //matchMedia method not supported
@@ -451,7 +451,7 @@ const { pageTitle } = Astro.props;
                     window.matchMedia("(prefers-color-scheme: dark)").matches
                 ) {
                     //OS theme setting detected as dark
-                    var theme = "dark";
+                    theme = "dark";
                 }
 
                 //dark theme preferred, set document with a `data-theme` attribute
